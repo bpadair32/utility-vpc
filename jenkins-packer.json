@@ -1,0 +1,19 @@
+{
+    "builders": [{
+        "type": "amazon-ebs",
+        "profile": "mocafi",
+        "region": "us-east-1",
+        "source_ami": "ami-0ac019f4fcb7cb7e6",
+        "ssh_username": "ubuntu",
+        "ami_name": "jenkins {{timestamp}}",
+        "instance_type": "t2.small",
+        "subnet_id": "subnet-089428e80cd4c5242",
+        "associate_public_ip_address": "true"
+    }],
+    "provisioners": [{
+        "type": "shell",
+        "scripts": [ "scripts/initial_run.sh" ],
+        "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+        "pause_before": "10s"
+    }]
+}
