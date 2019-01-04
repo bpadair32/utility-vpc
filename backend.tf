@@ -1,8 +1,8 @@
 terraform {
     backend "s3" {
-        bucket = "mocafi-terraform"
+        bucket = "adair-tech-terraform"
         key = "utility/utility.tfstate"
         region = "us-east-1"
-        profile = "mocafi"
+        profile = "adair-tech"
     }
 }
