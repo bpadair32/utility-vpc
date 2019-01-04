@@ -4,3 +4,5 @@
 */.terraform/*
 *.tfvars
 */*.tfvars
+jenkins-key
+jenkins-key.pub
